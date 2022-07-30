@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f"\n{f.read()}"
 
-VERSION = '1.0.0b2'
+VERSION = '1.0.0b3'
 DESCRIPTION = 'A Python library for generating snowflakes.'
 LONG_DESCRIPTION = 'A Python library for generating Discord, Twitter, Instagram and custom snowflakes.'
 
@@ -23,7 +23,7 @@ setup(
     project_urls = {
     'Repository': 'https://github.com/TheMultii/snowflake-util',
     },
-    install_requires=['datetime', 'typing'],
+    install_requires=[],
     keywords=['python', 'snowflake', 'generator', 'custom', 'library', 'id generator', 'uid'],
     classifiers=[
         "Development Status :: 4 - Beta",
