@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 with codecs.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f"\n{f.read()}"
 
-VERSION = '1.0.0b1'
+VERSION = '1.0.0b2'
 DESCRIPTION = 'A Python library for generating snowflakes.'
 LONG_DESCRIPTION = 'A Python library for generating Discord, Twitter, Instagram and custom snowflakes.'
 
@@ -18,7 +18,7 @@ setup(
     author="TheMultii",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
-    long_description=LONG_DESCRIPTION,
+    long_description=long_description,
     packages=find_packages(),
     project_urls = {
     'Repository': 'https://github.com/TheMultii/snowflake-util',
