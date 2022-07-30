@@ -1,4 +1,4 @@
-# snowlake-util
+# snowflake-util
 
 A Python library for generating Discord, Twitter, Instagram and custom snowflakes.
 

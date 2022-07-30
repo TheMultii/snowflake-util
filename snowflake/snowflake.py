@@ -77,7 +77,7 @@ class Snowflake:
         param2_length=5,
         sequence_length=12
     )
-    __version = "1.0.0b3"
+    __version = "1.0.0b4"
 
     def __init__(self, config: Optional[SnowflakeConfig] = __default_config) -> None:
         """
