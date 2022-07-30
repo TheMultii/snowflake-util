@@ -22,7 +22,7 @@ setup(
     packages=find_packages(),
     project_urls = {
     'Repository': 'https://github.com/TheMultii/snowflake-util',
-    }
+    },
     install_requires=['datetime', 'typing'],
     keywords=['python', 'snowlake', 'generator', 'custom', 'library', 'id generator', 'uid'],
     classifiers=[
