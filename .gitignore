@@ -1,1 +1,4 @@
 __pycache__/
+build/
+dist/
+snowflake_util.egg-info/
