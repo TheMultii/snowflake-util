@@ -6,6 +6,15 @@ A snowflake is a unique identifier for a resource that includes, among other thi
 
 Developed by TheMultii (c) 2022-present
 
+## Installing
+```bash
+# Linux/macOS
+python3 -m pip install -U snowflake-util
+
+# Windows
+py -3 -m pip install -U snowflake-util
+```
+
 ## Examples of How To Use
 
 Creating a custom snowflake
