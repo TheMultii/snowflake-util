@@ -24,7 +24,7 @@ setup(
     'Repository': 'https://github.com/TheMultii/snowflake-util',
     },
     install_requires=['datetime', 'typing'],
-    keywords=['python', 'snowlake', 'generator', 'custom', 'library', 'id generator', 'uid'],
+    keywords=['python', 'snowflake', 'generator', 'custom', 'library', 'id generator', 'uid'],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
