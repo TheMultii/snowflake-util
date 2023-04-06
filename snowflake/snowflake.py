@@ -116,7 +116,7 @@ class Snowflake:
         """
         return self.__config
 
-    def generate_discord_snowflake(self, worker: int, process: int, sequence: int, date: Optional[datetime] = datetime.now()) -> str:
+    def generate_discord_snowflake(self, worker: int, process: int, sequence: int, date: Optional[datetime] = None) -> str:
         """
         Generates a snowflake in the Discord format.
 
@@ -149,6 +149,9 @@ class Snowflake:
         assert 0 <= worker < 32, "Worker must be between 0 and 31."
         assert 0 <= process < 32, "Process must be between 0 and 31."
         assert 0 <= sequence < 4096, "Sequence must be between 0 and 4095."
+
+        if date is None:
+            date = datetime.now()
 
         __dt_calculated = round(date.timestamp() * 1000) - Epoch.discord.value
         if __dt_calculated < 0:
@@ -206,7 +209,7 @@ class Snowflake:
 
         return __date, __worker, __process, __sequence
 
-    def generate_twitter_snowflake(self, machine: int, sequence: int, date: Optional[datetime] = datetime.now()) -> str:
+    def generate_twitter_snowflake(self, machine: int, sequence: int, date: Optional[datetime] = None) -> str:
         """
         Generates a snowflake in the Twitter format.
 
@@ -236,6 +239,9 @@ class Snowflake:
         """
         assert 0 <= machine < 1024, "Worker must be between 0 and 1023."
         assert 0 <= sequence < 4096, "Sequence must be between 0 and 4095."
+
+        if date is None:
+            date = datetime.now()
 
         __dt_calculated = round(date.timestamp() * 1000) - Epoch.twitter.value
         if __dt_calculated < 0:
@@ -289,7 +295,7 @@ class Snowflake:
 
         return __date, __machine, __sequence
 
-    def generate_instagram_snowflake(self, shard: int, sequence: int, date: Optional[datetime] = datetime.now()) -> str:
+    def generate_instagram_snowflake(self, shard: int, sequence: int, date: Optional[datetime] = None) -> str:
         """
         Generates a snowflake in the Instagram format.
 
@@ -319,6 +325,9 @@ class Snowflake:
         """
         assert 0 <= shard < 8192, "Shard must be between 0 and 8191."
         assert 0 <= sequence < 1024, "Sequence must be between 0 and 1023."
+
+        if date is None:
+            date = datetime.now()
 
         __dt_calculated = round(date.timestamp() * 1000) - Epoch.instagram.value
         if __dt_calculated < 0:
@@ -372,7 +381,7 @@ class Snowflake:
 
         return __date, __shard, __sequence
 
-    def generate_snowflake(self, param1: int, sequence: int, date: Optional[datetime] = datetime.now(), **kwargs) -> str:
+    def generate_snowflake(self, param1: int, sequence: int, date: Optional[datetime] = None, **kwargs) -> str:
         """
         Generates a snowflake in the specified format.
         
@@ -416,6 +425,9 @@ class Snowflake:
         
         assert 0 <= param1 < 10 ** self.__config.param1_length, "Param1 must be between 0 and (10**(config.param1_length) - 1)"
         assert 0 <= sequence < 10 ** self.__config.sequence_length, "Sequence must be between 0 and (10**(config.sequence_length) - 1)"
+
+        if date is None:
+            date = datetime.now()
 
         __dt_calculated = round(date.timestamp() * 1000) - self.__config.epoch.value
         if __dt_calculated < 0:
