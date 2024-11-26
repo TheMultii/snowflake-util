@@ -47,7 +47,7 @@ SnowClass = snowflake.Snowflake()
 
 discord_snowflake = SnowClass.generate_discord_snowflake(worker=5, process=5, sequence=222, date=datetime(2022, 1, 1, 16, 15, 0, 0))
 
-print(y, SnowClass.parse_discord_snowflake(discord_snowflake))
+print(discord_snowflake, SnowClass.parse_discord_snowflake(discord_snowflake))
 ```
 
 Creating a Twitter snowflake
@@ -56,7 +56,7 @@ SnowClass = snowflake.Snowflake()
 
 twitter_snowflake = SnowClass.generate_twitter_snowflake(machine=333, sequence=666, date=datetime(2022, 1, 1, 16, 15, 0, 0))
 
-print(y, SnowClass.parse_twitter_snowflake(twitter_snowflake))
+print(twitter_snowflake, SnowClass.parse_twitter_snowflake(twitter_snowflake))
 ```
 
 Creating an Instagram snowflake
@@ -65,7 +65,7 @@ SnowClass = snowflake.Snowflake()
 
 instagram_snowflake = SnowClass.generate_instagram_snowflake(shard=1605, sequence=420, date=datetime(2020, 6, 11, 8 ,13))
 
-print(y, SnowClass.parse_instagram_snowflake(instagram_snowflake))
+print(instagram_snowflake, SnowClass.parse_instagram_snowflake(instagram_snowflake))
 ```
 
 ## IMPORTANT INFO:
