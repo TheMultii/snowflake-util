@@ -429,7 +429,8 @@ class Snowflake:
         if date is None:
             date = datetime.now()
 
-        __dt_calculated = round(date.timestamp() * 1000) - self.__config.epoch.value
+        epoch_value = self.__config.epoch.value if isinstance(self.__config.epoch, Epoch) else self.__config.epoch
+        __dt_calculated = round(date.timestamp() * 1000) - epoch_value
         if __dt_calculated < 0:
             raise ValueError("Provided date is before the epoch.")
         __binary_dt_calculated = bin(__dt_calculated)[2:].zfill(self.__config.timestamp_length)
@@ -489,7 +490,8 @@ class Snowflake:
             __binary_param2 = __binary_snowflake[(self.__config.timestamp_length + self.__config.param1_length):(self.__config.timestamp_length + self.__config.param1_length + self.__config.param2_length)]
             __binary_sequence = __binary_snowflake[(self.__config.timestamp_length + self.__config.param1_length + self.__config.param2_length):]
 
-        __timestamp = round((int(__binary_timestamp, 2) + self.__config.epoch.value) / 1000)
+        epoch_value = self.__config.epoch.value if isinstance(self.__config.epoch, Epoch) else self.__config.epoch
+        __timestamp = round((int(__binary_timestamp, 2) + epoch_value) / 1000)
         __param1 = int(__binary_param1, 2)
         __param2 = int(__binary_param2, 2) if __binary_param2 is not None else None
         __sequence = int(__binary_sequence, 2)
