@@ -164,7 +164,7 @@ class Snowflake:
 
         return str(int(f"{__binary_dt_calculated}{__binary_worker}{__binary_process}{__binary_sequence}", 2))
 
-    def parse_discord_snowflake(self, snowflake: str) -> tuple[datetime, int, int, int]:
+    def parse_discord_snowflake(self, snowflake: str) -> 'tuple[datetime, int, int, int]':
         """
         Parses a snowflake in the Discord format.
 
@@ -253,7 +253,7 @@ class Snowflake:
 
         return str(int(f"0{__binary_dt_calculated}{__binary_machine}{__binary_sequence}", 2))
 
-    def parse_twitter_snowflake(self, snowflake: str) -> tuple[datetime, int, int]:
+    def parse_twitter_snowflake(self, snowflake: str) -> 'tuple[datetime, int, int]':
         """
         Parses a snowflake in the Twitter format.
 
@@ -339,7 +339,7 @@ class Snowflake:
 
         return str(int(f"{__binary_dt_calculated}{__binary_shard}{__binary_sequence}", 2))
 
-    def parse_instagram_snowflake(self, snowflake: str) -> tuple[datetime, int, int]:
+    def parse_instagram_snowflake(self, snowflake: str) -> 'tuple[datetime, int, int]':
         """
         Parses a snowflake in the Instagram format.
 
@@ -446,7 +446,7 @@ class Snowflake:
 
         return str(int(__binary_string, 2))
 
-    def parse_snowflake(self, snowflake: str) -> tuple[datetime, int, int, Optional[int]]:
+    def parse_snowflake(self, snowflake: str) -> 'tuple[datetime, int, int, Optional[int]]':
         """
         Parses a snowflake in the specified format.
 
